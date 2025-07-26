@@ -1,60 +1,60 @@
+import AnimatedSectionHeading from "./AnimatedSectionHeading";
+
 const projects = [
   {
-    title: "Mern Stack (Training) – Auto Heavens",
-    description: "Created and managed the project Auto Heavens, a social interaction website during training at Sensation Company, Mohali.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    link: "#"
+    title: "Auto Heavens (Social Interaction Website)",
+    company: "Sensation Company, Mohali",
+    date: "Jun 2024 – Jul 2024",
+    description:
+      "Created and managed the project Auto Heavens, participated in two hackathons leading the team. Projects included E-Commerce Website and Real-time Chat with FaceTime.",
   },
   {
-    title: "Capstone Group Project – Restaurant Ranking System",
-    description: "Created a project for a restaurant that involved ranking various menu items. Led a team, shared development responsibilities, and made significant backend contributions.",
-    tech: ["Python", "SQL", "Data Analytics"],
-    link: "#"
+    title: "Capstone: Restaurant Ranking System",
+    company: "CT University",
+    date: "",
+    description:
+      "Built a ranking system for a restaurant menu, leading backend development and sharing all aspects of the process.",
   },
   {
-    title: "IBM Data Analyst Professional Certificate",
-    description: "Completed 11-course series on Coursera, gaining experience in data analysis using Python (NumPy, Pandas), visualization, and foundational tools like Matplotlib and Seaborn.",
-    tech: ["Python", "IBM Data Analytics", "Pandas", "Numpy", "Seaborn", "Matplotlib"],
-    link: "#"
+    title: "Flappy-Bird Side Project",
+    company: "",
+    date: "Jul 2023",
+    description:
+      "Self-taught project implementing Flappy-Bird as a web game using modern web technologies.",
   },
-  {
-    title: "Web Development at CT University",
-    description: "Built responsive interfaces using HTML, CSS, Bootstrap, React, and Node.js as part of university training.",
-    tech: ["HTML", "CSS", "Bootstrap", "React", "Node.js"],
-    link: "#"
-  },
-  {
-    title: "Hackathons & Team Leadership",
-    description: "Participated in two hackathons—created an E-Commerce website and led teams, implemented payment gateways, and contributed to server-side logic and API integration.",
-    tech: ["Team Leadership", "Fullstack", "API Development"],
-    link: "#"
-  }
 ];
 
 const Projects = () => (
-  <section id="projects" className="py-16 bg-white">
-    <div className="container mx-auto px-6">
+  <section id="projects" className="py-16 bg-black relative">
+    <div className="container mx-auto px-6 overflow-x-hidden relative z-10">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+        <AnimatedSectionHeading
+          glowClass="hover:glow-orange focus:glow-orange"
+          gradientColors="from-[#fbbf24] via-[#38bdf8] to-[#a78bfa]"
+        >
+          Projects & Hackathons
+        </AnimatedSectionHeading>
+        <div className="w-20 h-1 m-2 bg-gradient-to-r from-[#fbbf24] via-[#38bdf8] to-[#a78bfa] mx-auto"></div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, idx) => (
-          <div key={idx} className="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-            <div className="h-32 bg-gray-200"></div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((t, ti) => (
-                  <span key={ti} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">{t}</span>
-                ))}
-              </div>
-            </div>
+      <div className="grid md:grid-cols-2 gap-8">
+        {projects.map(({ title, company, date, description }) => (
+          <div
+            key={title}
+            className="bg-[#18181b]/90 rounded-lg shadow-lg p-6 border border-blue-800 transition hover:scale-105 animate-fadeIn hover:ring-2 hover:ring-blue-400"
+          >
+            <h3 className="text-lg font-semibold bg-gradient-to-r from-emerald-400 to-blue-400 text-transparent bg-clip-text animate-gradient-x drop-shadow">
+              {title}
+            </h3>
+            <p className="mt-1 text-gray-400 text-xs">
+              {company}
+              {date && ` | ${date}`}
+            </p>
+            <p className="mt-2 text-gray-300 text-sm">{description}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 );
+
 export default Projects;

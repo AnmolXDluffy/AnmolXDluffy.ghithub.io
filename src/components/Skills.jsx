@@ -1,3 +1,7 @@
+import React from "react";
+import CircularProgress from "./CircularProgress";
+import AnimatedSectionHeading from "./AnimatedSectionHeading";
+
 const skills = [
   { name: "Python", level: 80 },
   { name: "NumPy", level: 75 },
@@ -14,26 +18,24 @@ const skills = [
 ];
 
 const Skills = () => (
-  <section id="skills" className="py-16 bg-gray-50">
-    <div className="container mx-auto px-6">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My Skills</h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+  <section id="skills" className="py-14 bg-black">
+    <div className="container mx-auto px-6 overflow-x-hidden">
+      <div className="text-center mb-8">
+        <AnimatedSectionHeading
+          glowClass="hover:glow-emerald focus:glow-emerald"
+          gradientColors="from-[#34d399] via-[#38bdf8] to-[#a78bfa]"
+        >
+          My Skills
+        </AnimatedSectionHeading>
+        <div className="w-16 h-1 m-2 bg-gradient-to-r from-[#38bdf8] via-[#34d399] to-[#a78bfa] mx-auto"></div>
       </div>
-      <div className="max-w-3xl mx-auto grid gap-6">
-        {skills.map((skill, idx) => (
-          <div key={idx} className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-lg font-semibold text-gray-800">{skill.name}</span>
-              <span className="text-blue-600 font-medium">{skill.level}%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-3">
-              <div className="bg-blue-600 h-3 rounded-full" style={{ width: `${skill.level}%` }} />
-            </div>
-          </div>
+      <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4 justify-center">
+        {skills.map(({ name, level }) => (
+          <CircularProgress key={name} label={name} percentage={level} />
         ))}
       </div>
     </div>
   </section>
 );
+
 export default Skills;
