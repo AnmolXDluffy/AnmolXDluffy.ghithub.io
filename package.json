@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "react-scripts start",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -45,5 +44,5 @@
   "bugs": {
     "url": "https://github.com/AnmolXDluffy/AnmolXDluffy.ghithub.io/issues"
   },
-  "homepage": "https://github.com/AnmolXDluffy/AnmolXDluffy.github.io"
+  "homepage": "https://github.com/AnmolXDluffy/AnmolXDluffy.github.io#readme"
 }
