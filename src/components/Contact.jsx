@@ -16,7 +16,7 @@ const Contact = () => (
       <div className="w-20 h-1 m-2 bg-gradient-to-r from-[#fb7185] via-[#38bdf8] to-[#34d399] mx-auto mb-6"></div>
       <div className="flex justify-center">
   <img
-    src="/image/ak.jpg"
+    src="/ak.jpg"
     alt="My pic"
     className="w-11 h-11 rounded-full ring-4 ring-blue-400 shadow-xl
       transition-transform duration-300

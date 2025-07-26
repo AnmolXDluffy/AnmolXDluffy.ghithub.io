@@ -10,7 +10,7 @@ const About = () => (
       <div className="flex flex-col items-center mb-6">
         <div className="z-10 relative">
           <img
-  src="/image/mypfp.jpg"
+  src="/mypfp.jpg"
   alt="My pic"
   className="
     w-40 h-40 rounded-full ring-4 ring-blue-400 shadow-xl
